@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terminé mi primera ruta de Android Basics with Compose — Kamila Selvas</title>
+<meta name="description" content="Notas sobre cómo empecé a aprender Kotlin y Jetpack Compose con el Google Developer Program: configurar Android Studio, entender el estado en la UI y construir mi primer layout.">
+<link rel="canonical" href="https://kamila-selvas.github.io/tu-repo/posts/mi-primera-ruta-android-basics-compose.html">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Terminé mi primera ruta de Android Basics with Compose">
+<meta property="og:description" content="Cómo empecé a aprender Kotlin y Jetpack Compose con el Google Developer Program.">
+<meta property="og:url" content="https://kamila-selvas.github.io/tu-repo/posts/mi-primera-ruta-android-basics-compose.html">
+<meta property="article:published_time" content="2026-09-13">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%236E5B92'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='white' font-family='Georgia,serif'%3EK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Terminé mi primera ruta de Android Basics with Compose",
+  "datePublished": "2026-09-13",
+  "author": { "@type": "Person", "name": "Kamila Selvas" },
+  "mainEntityOfPage": "https://kamila-selvas.github.io/tu-repo/posts/mi-primera-ruta-android-basics-compose.html"
+}
+</script>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Navegación principal">
+  <div class="wrap">
+    <a class="brand" href="../index.html#inicio">Kamila Selvas</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#blog">Blog</a></li>
+      <li><a href="../index.html#redes">Redes</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="article-header">
+    <a class="back" href="../index.html#blog">← Volver a las entradas</a>
+    <h1>Terminé mi primera ruta de Android Basics with Compose</h1>
+    <p class="article-meta"><time datetime="2026-09-13">13 de septiembre, 2026</time> · 4 min de lectura · Android · Kotlin</p>
+  </header>
+
+  <article class="content">
+    <p>Esta semana terminé mi primera ruta de aprendizaje en el Google Developer Program: <em>Android Basics with Compose</em>. La empecé un poco por curiosidad, después de que en clase tocamos por encima el tema de desarrollo móvil, y terminé enganchada más de lo que esperaba.</p>
+
+    <h2>Configurar el entorno, la parte menos glamurosa</h2>
+    <p>Lo primero fue instalar y configurar Android Studio. No es la parte más emocionante, pero es donde te das cuenta de que un IDE hecho específicamente para una plataforma se siente distinto a escribir código en un editor genérico: el emulador, el preview de las interfaces, el autocompletado pensado para Compose. Obtener la insignia de <strong>Configura Android Studio</strong> se sintió como el primer check real de "esto ya empezó en serio".</p>
+
+    <h2>Kotlin: menos ceremonia de la que esperaba</h2>
+    <p>Antes de tocar interfaces, la ruta pasa por los fundamentos de Kotlin. Venía con la idea de que un lenguaje "para Android" iba a ser verboso, y me sorprendió lo contrario: variables con <code>val</code> y <code>var</code>, inferencia de tipos, funciones como ciudadanos de primera clase. Terminé el cuestionario de <em>Introduction to programming in Kotlin</em> con 10 de 10, aunque no fue sin tropezar antes en null safety, que al principio se siente como una regla extra y termina siendo la razón por la que el compilador te salva de un error en tiempo de ejecución.</p>
+
+    <h2>Construyendo mi primera interfaz con Compose</h2>
+    <p>Esta fue la parte que más me gustó. Jetpack Compose es declarativo: en vez de ir mutando la pantalla paso a paso, describes cómo se ve la UI para un estado dado, y el framework se encarga de actualizar lo que cambió. Fui completando esto en orden: <em>Build a Basic Layout</em>, <em>Add a button to an app</em> e <em>Interacting with UI and state</em>, y en el último quedó más claro el concepto de estado como algo que "recuerdas" entre recomposiciones:</p>
+
+    <pre><code>@Composable
+fun SaludoConContador() {
+    var contador by remember { mutableStateOf(0) }
+
+    Column {
+        Text(text = "Clics: $contador")
+        Button(onClick = { contador++ }) {
+            Text("Presióname")
+        }
+    }
+}</code></pre>
+
+    <p>Lo que antes me costaba entender en teoría —por qué la UI "sabe" que debe redibujarse— se volvió obvio al ver <code>remember</code> y <code>mutableStateOf</code> en acción: el composable simplemente se vuelve a ejecutar cuando el estado cambia.</p>
+
+    <h2>Lo que sigue</h2>
+    <p>Terminé la ruta con un 9 de 10 en el último cuestionario (todavía tengo que repasar cuándo Compose decide recomponer y cuándo no) y con seis insignias nuevas en el perfil. Lo que más me gustó no fue la teoría suelta, sino ir completando algo tangible: un botón que responde, un layout que se ve como esperaba. Ahora quiero seguir con listas, navegación entre pantallas y, en algún momento, intentar mi primer proyecto propio con Compose.</p>
+  </article>
+
+  <nav class="post-nav" aria-label="Navegación entre posts">
+    <a href="arreglos-y-recursividad-estructura-de-datos.html">← Arreglos y recursividad: mis apuntes de Estructura de Datos</a>
+    <a href="entendiendo-closures-en-javascript.html">Siguiente: Entendiendo los closures en JavaScript →</a>
+  </nav>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">© 2026 Kamila Selvas · Sitio estático hecho a mano, hospedado en GitHub Pages.</div>
+</footer>
+
+</body>
+</html>

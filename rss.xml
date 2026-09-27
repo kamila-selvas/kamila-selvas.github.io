@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Kamila Selvas — Notas sobre desarrollo de software</title>
+  <link>https://kamila-selvas.github.io/tu-repo/</link>
+  <description>Apuntes, aprendizajes y experimentos sobre desarrollo de software.</description>
+  <language>es</language>
+
+  <item>
+    <title>Arreglos y recursividad: mis apuntes de Estructura de Datos</title>
+    <link>https://kamila-selvas.github.io/tu-repo/posts/arreglos-y-recursividad-estructura-de-datos.html</link>
+    <pubDate>Sun, 27 Sep 2026 00:00:00 GMT</pubDate>
+    <description>Estructuras estáticas vs. dinámicas, arreglos de objetos en Java y por qué la recursividad no es un ciclo disfrazado.</description>
+  </item>
+  <item>
+    <title>Terminé mi primera ruta de Android Basics with Compose</title>
+    <link>https://kamila-selvas.github.io/tu-repo/posts/mi-primera-ruta-android-basics-compose.html</link>
+    <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
+    <description>Configurar Android Studio, aprender Kotlin y construir mi primera interfaz con Jetpack Compose.</description>
+  </item>
+  <item>
+    <title>Entendiendo los closures en JavaScript</title>
+    <link>https://kamila-selvas.github.io/tu-repo/posts/entendiendo-closures-en-javascript.html</link>
+    <pubDate>Sun, 20 Sep 2026 00:00:00 GMT</pubDate>
+    <description>Por qué un closure no es magia: una explicación desde el scope léxico y ejemplos del día a día.</description>
+  </item>
+  <item>
+    <title>Optimizando consultas SQL lentas</title>
+    <link>https://kamila-selvas.github.io/tu-repo/posts/optimizando-consultas-sql.html</link>
+    <pubDate>Sat, 05 Sep 2026 00:00:00 GMT</pubDate>
+    <description>Cómo leo un plan de ejecución y las tres cosas que reviso antes de tocar un índice.</description>
+  </item>
+  <item>
+    <title>Mi primer mes programando profesionalmente</title>
+    <link>https://kamila-selvas.github.io/tu-repo/posts/mi-primer-mes-programando.html</link>
+    <pubDate>Fri, 14 Aug 2026 00:00:00 GMT</pubDate>
+    <description>Notas honestas sobre el primer mes en mi primer trabajo como developer.</description>
+  </item>
+</channel>
+</rss>

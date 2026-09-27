@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arreglos y recursividad: mis apuntes de Estructura de Datos — Kamila Selvas</title>
+<meta name="description" content="Notas de la Unidad 1 de Estructura de Datos: la diferencia entre estructuras estáticas y dinámicas, arreglos de objetos en Java y por qué la recursividad no es lo mismo que un ciclo.">
+<link rel="canonical" href="https://kamila-selvas.github.io/tu-repo/posts/arreglos-y-recursividad-estructura-de-datos.html">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Arreglos y recursividad: mis apuntes de Estructura de Datos">
+<meta property="og:description" content="La diferencia entre estructuras estáticas y dinámicas, arreglos de objetos en Java y por qué la recursividad no es un ciclo disfrazado.">
+<meta property="og:url" content="https://kamila-selvas.github.io/tu-repo/posts/arreglos-y-recursividad-estructura-de-datos.html">
+<meta property="article:published_time" content="2026-09-27">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%236E5B92'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='white' font-family='Georgia,serif'%3EK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Arreglos y recursividad: mis apuntes de Estructura de Datos",
+  "datePublished": "2026-09-27",
+  "author": { "@type": "Person", "name": "Kamila Selvas" },
+  "mainEntityOfPage": "https://kamila-selvas.github.io/tu-repo/posts/arreglos-y-recursividad-estructura-de-datos.html"
+}
+</script>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Navegación principal">
+  <div class="wrap">
+    <a class="brand" href="../index.html#inicio">Kamila Selvas</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#blog">Blog</a></li>
+      <li><a href="../index.html#redes">Redes</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="article-header">
+    <a class="back" href="../index.html#blog">← Volver a las entradas</a>
+    <h1>Arreglos y recursividad: mis apuntes de Estructura de Datos</h1>
+    <p class="article-meta"><time datetime="2026-09-27">27 de septiembre, 2026</time> · 5 min de lectura · Estructura de Datos</p>
+  </header>
+
+  <article class="content">
+    <p>Empezamos la Unidad 1 de Estructura de Datos y quiero dejar por escrito lo que se quedó de la primera semana, sobre todo porque hay dos ideas que sonaban obvias en la diapositiva y que solo terminé de entender al ver el código.</p>
+
+    <h2>Estructura de datos vs. tipo de dato abstracto</h2>
+    <p>La primera distinción que anoté: una <strong>estructura de datos</strong> es una colección de datos que se caracteriza por su organización y por las operaciones que se definen sobre ella. Un <strong>tipo de dato abstracto (TDA)</strong>, en cambio, es un tipo definido por quien programa, no por el lenguaje. En la práctica, cuando defines una clase <code>Alumno</code> con sus propios atributos y métodos, ya estás creando un TDA.</p>
+
+    <h2>Estáticas vs. dinámicas</h2>
+    <p>La clasificación que vimos depende de si la estructura puede crecer o no en memoria una vez que el programa ya está corriendo:</p>
+    <ul>
+      <li><strong>Estáticas</strong>: almacenan una cantidad fija de datos, establecida antes de ejecutar el programa. Ejemplo clásico: los arreglos.</li>
+      <li><strong>Dinámicas</strong>: su tamaño se puede incrementar o disminuir según se necesite. Aquí entran pilas, colas, listas y árboles.</li>
+    </ul>
+
+    <h2>Arreglos en Java: son objetos</h2>
+    <p>Algo que no tenía tan claro: en Java los arreglos son objetos, así que se crean con <code>new</code>. Se pueden declarar y crear en un solo paso o por separado:</p>
+    <pre><code>tipo_dato identificador[] = new tipo_elemento[tamaño];
+
+// o en dos pasos:
+tipo_dato identificador[];              // declara la variable arreglo
+identificador = new tipo_elemento[tamaño]; // crea el arreglo</code></pre>
+    <p>Y un detalle que se me había pasado: al crear un arreglo, cada elemento recibe un valor predeterminado por el lenguaje (0 para <code>int</code>, <code>null</code> para <code>String</code>), no queda "vacío" de verdad.</p>
+
+    <h2>Arreglos de objetos en POO</h2>
+    <p>Donde de verdad conecté esto con lo que ya sabía de programación orientada a objetos fue con los arreglos de objetos: un arreglo puede guardar instancias completas de una clase, no solo tipos primitivos.</p>
+    <pre><code>// 1. Declarar el arreglo de la clase Alumno
+Alumno[] lista = new Alumno[5];
+
+// 2. Crear los objetos
+Alumno alumno1 = new Alumno("Juan", 181234);
+Alumno alumno2 = new Alumno("Ana", 193234);
+
+// 3. Asignarlos al arreglo
+lista[0] = alumno1;
+lista[1] = alumno2;
+
+// 4. Acceder a sus métodos
+System.out.println(lista[0].getNombre() + " " + lista[0].getMatricula());</code></pre>
+
+    <h2>Recursividad: no es magia, es dividir el problema</h2>
+    <p>La segunda mitad de la unidad fue recursividad: una técnica en la que un método se llama a sí mismo para resolver un problema dividiéndolo en subproblemas más pequeños, hasta llegar a un <strong>caso base</strong> que detiene la recursión. El ejemplo de siempre, el factorial, es el que más me ayudó a visualizarlo:</p>
+    <pre><code>public static int factorial(int n) {
+    if (n == 0)
+        return 1;              // caso base
+    else
+        return n * factorial(n - 1);
+}</code></pre>
+    <p>Lo que se ve raro al inicio es que la función "confía" en que la llamada siguiente le va a devolver el resultado correcto, y solo se preocupa por combinarlo con su propio paso. La búsqueda binaria en un arreglo ordenado sigue la misma lógica: en cada llamada se divide el conjunto de datos a la mitad, se compara el elemento central con lo que se busca y, según el resultado, se repite la búsqueda solo en la mitad izquierda o derecha, hasta encontrar el valor o quedarse sin rango donde buscar.</p>
+
+    <h2>El error que marcaron en clase: confundir recursividad con un ciclo</h2>
+    <p>Esta fue la parte que más se quedó grabada. Vimos un ejemplo de una función <code>verMenu()</code> que se llamaba a sí misma solo para repetir un menú cuando el usuario elegía una opción inválida. Se ve como recursividad porque la función se invoca a sí misma, pero no lo es: no hay un problema que se esté dividiendo en subproblemas más pequeños ni un caso base que reduzca algo. Es, literalmente, un ciclo disfrazado de recursividad, y con cada opción inválida se sigue apilando una llamada nueva sin necesidad.</p>
+
+    <p>Dejo aquí las tres aplicaciones típicas de la recursividad que anotamos, para no olvidarlas: búsqueda (búsqueda binaria), ordenamiento (QuickSort) y estructuras de datos (árboles binarios). Voy a ir completando esta serie conforme avancemos en el semestre.</p>
+  </article>
+
+  <nav class="post-nav" aria-label="Navegación entre posts">
+    <span></span>
+    <a href="mi-primera-ruta-android-basics-compose.html">Siguiente: Mi primera ruta de Android Basics with Compose →</a>
+  </nav>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">© 2026 Kamila Selvas · Sitio estático hecho a mano, hospedado en GitHub Pages.</div>
+</footer>
+
+</body>
+</html>
