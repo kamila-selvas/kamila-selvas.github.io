@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://kamila-selvas.github.io/tu-repo/</loc>
+    <loc>https://kamila-selvas.github.io/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://kamila-selvas.github.io/tu-repo/posts/arreglos-y-recursividad-estructura-de-datos.html</loc>
+    <loc>https://kamila-selvas.github.io/arreglos-y-recursividad-estructura-de-datos.html</loc>
     <lastmod>2026-09-27</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kamila-selvas.github.io/tu-repo/posts/mi-primera-ruta-android-basics-compose.html</loc>
+    <loc>https://kamila-selvas.github.io/mi-primera-ruta-android-basics-compose.html</loc>
     <lastmod>2026-09-13</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kamila-selvas.github.io/tu-repo/posts/entendiendo-closures-en-javascript.html</loc>
+    <loc>https://kamila-selvas.github.io/entendiendo-closures-en-javascript.html</loc>
     <lastmod>2026-09-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kamila-selvas.github.io/tu-repo/posts/optimizando-consultas-sql.html</loc>
+    <loc>https://kamila-selvas.github.io/optimizando-consultas-sql.html</loc>
     <lastmod>2026-09-05</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kamila-selvas.github.io/tu-repo/posts/mi-primer-mes-programando.html</loc>
+    <loc>https://kamila-selvas.github.io/mi-primer-mes-programando.html</loc>
     <lastmod>2026-08-14</lastmod>
     <priority>0.8</priority>
   </url>
